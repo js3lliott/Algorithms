@@ -131,3 +131,21 @@ nums = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 quickSort(nums)
 print(nums)
 
+
+# Version 1 of Heap Sort
+from heapq import heappop, heappush
+def heapSort(array):
+    # create an empty array to store sorted elements
+    heap = []
+
+    # iterating over the array and pushing each element into the heap
+    for element in array:
+        # inserting using heap push
+        heappush(heap, element)
+    # empty list to store the sorted elements
+    sorted_array = []
+    while heap:
+        # inserting into sorted_array until the heap is empty
+        sorted_array.append(heappop(heap))
+    # return the new sorted_array
+    return sorted_array
