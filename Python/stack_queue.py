@@ -36,7 +36,7 @@ class Queue:
 
 # Circular Queue implementation
 class CircularQueue:
-    def __init_(self, k):
+    def __init__(self, k):
         self.queue = [None] * k
         self.head = -1
         self.tail = -1
@@ -85,3 +85,51 @@ class CircularQueue:
     # Checks whether the circular queue is full or not
     def isFull(self):
         return self.currlen == self.maxSize
+
+
+# # Breadth First Search using Queue - rough pseudocode
+# # Template 1
+# def BFS(root, target):
+#     queue = [] # store all nodes which are waiting to be processed
+#     step = 0 # number of steps needed from root to current node
+
+#     # initialize
+#     add root to queue
+
+#     # BFS
+#     while queue is not empty:
+#         step += 1
+#         # iterate through the nodes which are already in the queue
+#         size = len(queue)
+#         for i in range(size):
+#             curr = first node in queue
+#             return step if curr is target
+#             for next -> neighbors of curr:
+#                 add next to queue
+
+#             remove the first node in the queue
+
+#     return -1
+
+# # Template 2 - BFS and Queue
+# def BFS(root, target):
+#     queue = [] # store all nodes which are waiting to be processed
+#     visited = {} # store all nodes that we've visited
+#     step = 0 # number of steps needed from root to the current node
+
+#     add root to queue
+#     add root to visited
+
+#     while queue is not empty:
+#         step += 1
+#         # iterate the nodes which are already in the queue
+#         size = len(queue)
+#         for i in range(size):
+#             curr = first node in the queue
+#             return step if curr is target
+#             for next -> neighbors of curr:
+#                 if next is not in visited:
+#                     add next to queue
+#                     add next to visited
+#                 remove the first node from the queue
+#     return -1
